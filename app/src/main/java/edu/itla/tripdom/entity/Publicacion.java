@@ -1,8 +1,8 @@
-package edu.itla.tripdom.Entity;
+package edu.itla.tripdom.entity;
 
-import android.graphics.Bitmap;
-
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by blare on 15/11/2017.
@@ -11,14 +11,19 @@ import java.util.Date;
 public class Publicacion {
     public int id;
     public Date fecha;
-    public Date fecha_viaje;
+    public Date fechaViaje;
     public float costo;
     public String descripcion;
-    public boolean estatus;
-    public int usuario_id;
+    public String estado;
+    public Usuario usuario;
     public String origen;
     public String imagen;
     public int cupo;
+     List <PublicacionDetalle> detalle;
+
+    public List<PublicacionDetalle> getDetalle() {
+        return detalle;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -28,8 +33,8 @@ public class Publicacion {
         this.fecha = fecha;
     }
 
-    public void setFecha_viaje(Date fecha_viaje) {
-        this.fecha_viaje = fecha_viaje;
+    public void setFecha_viaje(Date fechaViaje) {
+        this.fechaViaje = fechaViaje;
     }
 
     public void setCosto(float costo) {
@@ -40,12 +45,12 @@ public class Publicacion {
         this.descripcion = descripcion;
     }
 
-    public void setEstatus(boolean estatus) {
-        this.estatus = estatus;
+    public void setEstatus(String estado) {
+        this.estado = estado;
     }
 
-    public void setUsuario_id(int usuario_id) {
-        this.usuario_id = usuario_id;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public void setOrigen(String origen) {
@@ -69,8 +74,8 @@ public class Publicacion {
         return fecha;
     }
 
-    public Date getFecha_viaje() {
-        return fecha_viaje;
+    public Date getFechaViaje() {
+        return fechaViaje;
     }
 
     public float getCosto() {
@@ -81,12 +86,12 @@ public class Publicacion {
         return descripcion;
     }
 
-    public boolean isEstatus() {
-        return estatus;
+    public String getEstado() {
+        return estado;
     }
 
-    public int getUsuario_id() {
-        return usuario_id;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     public String getOrigen() {
@@ -99,5 +104,14 @@ public class Publicacion {
 
     public int getCupo() {
         return cupo;
+    }
+
+    public void addDetalle (PublicacionDetalle pd) {
+        if (detalle == null){
+            detalle = new ArrayList();
+        }
+        pd.setPublicacion(this);
+        detalle.add (pd);
+
     }
 }

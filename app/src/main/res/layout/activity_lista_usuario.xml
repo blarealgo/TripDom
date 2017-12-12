@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.itla.tripdom.entity.ListaUsuario">
+
+    <Button
+        android:id="@+id/btnagregar"
+        android:layout_width="125dp"
+        android:layout_height="49dp"
+        android:text="Agregar"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <ListView
+        android:id="@+id/lvlistausuario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="90dp" />
+
+</LinearLayout>

@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Visualizar"></activity>
+        <activity android:name=".Visualizar" />
+        <activity android:name=".view.RegistroUsuario" />
+        <activity android:name=".entity.ListaUsuario"></activity>
     </application>
 
 </manifest>
